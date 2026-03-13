@@ -10,7 +10,7 @@ export function Hero() {
       {/* Background image — replace src with real hero photo */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero-placeholder.jpg')" }}
+        style={{ backgroundImage: "url('/hero-poster.jpg')" }}
       />
 
       {/* Gradient overlay — heavier at bottom for text legibility */}
