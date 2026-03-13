@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Exclude reference templates from Tailwind content scanning */
+@source not "../../_reference-templates";
+
 @theme inline {
   --color-background: #FFFFFF;
   --color-foreground: #111111;
@@ -21,14 +24,34 @@
 
   --color-star: #FBBF24;
 
-  --font-display: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: var(--font-oswald), 'Oswald', sans-serif;
+  --font-body: var(--font-inter), 'Inter', sans-serif;
 
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
 
   --radius-sm: 8px;
   --radius-md: 12px;
+
+  /* Plexify-matched headline sizes (responsive scale) */
+  --text-4xxl: 45px;
+  --text-4xxl--line-height: 1;
+  --text-6xl: 60px;
+  --text-6xl--line-height: 1;
+  --text-8xl: 80px;
+  --text-8xl--line-height: 1;
+  --text-10xl: 100px;
+  --text-10xl--line-height: 1;
+  --text-12xl: 120px;
+  --text-12xl--line-height: 1;
+  --text-15xl: 150px;
+  --text-15xl--line-height: 1;
+
+  /* Plexify breakpoints for hero scaling */
+  --breakpoint-3xl: 1681px;
+
+  /* Animation for header slide down */
+  --animate-headerSlideDown: headerSlideDown 0.95s ease forwards;
 }
 
 @layer base {
@@ -49,5 +72,14 @@
   h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-primary);
     font-family: var(--font-display);
+  }
+}
+
+@keyframes headerSlideDown {
+  0% {
+    margin-top: -150px;
+  }
+  100% {
+    margin-top: 0;
   }
 }

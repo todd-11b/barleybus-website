@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,24 +9,47 @@ import { BOOKING_LINKS } from "@/config/booking";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-white shadow-md animate-headerSlideDown"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
         {/* Logo / Wordmark */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight text-navy">
-            BARLEY BUS
+          <span
+            className={`font-display text-xl font-bold uppercase tracking-wider transition-colors duration-500 ${
+              scrolled ? "text-navy" : "text-white"
+            }`}
+          >
+            Barley Bus
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-navy transition-colors hover:text-coral"
+              className={`text-sm font-medium uppercase tracking-wide transition-colors duration-300 ${
+                scrolled
+                  ? "text-navy hover:text-coral"
+                  : "text-white/90 hover:text-white"
+              }`}
             >
               {link.label}
             </Link>
@@ -34,10 +57,14 @@ export function Header() {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href={CONTACT.phoneHref}
-            className="flex items-center gap-1.5 text-sm font-medium text-navy hover:text-coral"
+            className={`flex items-center gap-1.5 text-sm font-medium transition-colors duration-300 ${
+              scrolled
+                ? "text-navy hover:text-coral"
+                : "text-white/90 hover:text-white"
+            }`}
           >
             <Phone className="h-4 w-4" />
             {CONTACT.phone}
@@ -51,7 +78,9 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden p-2 text-navy"
+          className={`lg:hidden p-2 transition-colors duration-300 ${
+            scrolled ? "text-navy" : "text-white"
+          }`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >

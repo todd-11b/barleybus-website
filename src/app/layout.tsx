@@ -1,13 +1,47 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: [
+    {
+      path: "./fonts/inter-latin.woff2",
+      style: "normal",
+    },
+  ],
   display: "swap",
   variable: "--font-inter",
+  fallback: [
+    "Inter",
+    "ui-sans-serif",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    "sans-serif",
+  ],
+});
+
+const oswald = localFont({
+  src: [
+    {
+      path: "./fonts/oswald-latin.woff2",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-oswald",
+  fallback: [
+    "Oswald",
+    "Impact",
+    "Haettenschweiler",
+    "Arial Narrow Bold",
+    "sans-serif",
+  ],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>
