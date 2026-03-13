@@ -31,7 +31,7 @@ export default function HomePage() {
         }}
       />
 
-      {/* Section 1 — Hero */}
+      {/* Section 1 — Hero (Plexify exact copy) */}
       <Hero />
     </>
   );
