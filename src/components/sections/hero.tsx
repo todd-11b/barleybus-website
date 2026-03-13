@@ -58,16 +58,24 @@ export function Hero() {
     <section className="relative">
       {/* Hero Background */}
       <div className="relative min-h-[600px] bg-navy/5 lg:min-h-[680px]">
-        {/* Placeholder for hero image — replace with Next.js Image component and real photo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/60 to-navy/40" />
+        {/* Poster image on mobile + reduced-motion fallback */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('/hero-placeholder.jpg')",
-            mixBlendMode: "multiply",
-          }}
+          className="absolute inset-0 bg-cover bg-center md:hidden motion-safe:md:hidden"
+          style={{ backgroundImage: "url('/hero-poster.jpg')" }}
         />
+        {/* Video background — desktop only, respects prefers-reduced-motion */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/hero-poster.jpg"
+          className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:hidden md:motion-safe:block"
+        >
+          <source src="/hero-video.webm" type="video/webm" />
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/60 to-navy/40" />
 
         {/* Hero Content */}
         <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8 lg:py-32">
