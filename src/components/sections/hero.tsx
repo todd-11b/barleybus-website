@@ -40,14 +40,11 @@ export function Hero() {
   const [guests, setGuests] = useState("");
 
   const handleCheckAvailability = () => {
-    // Future: submit to GHL as lead, then show contact capture modal.
-    // Current: redirect to CaptainBook hub.
     const params = new URLSearchParams();
     if (tourType) params.set("tour_type", tourType);
     if (dateOption) params.set("date", dateOption);
     if (guests) params.set("guests", guests);
 
-    // For now, link to booking hub
     window.open(
       "https://barley-bus-tours-transportation.captainbook.io/en/embedded/all?wid=3",
       "_blank"
@@ -57,7 +54,7 @@ export function Hero() {
   return (
     <section className="relative">
       {/* Hero Background */}
-      <div className="relative min-h-[600px] bg-navy/5 lg:min-h-[680px]">
+      <div className="relative min-h-[600px] lg:min-h-[700px]">
         {/* Poster image on mobile + reduced-motion fallback */}
         <div
           className="absolute inset-0 bg-cover bg-center md:hidden motion-safe:md:hidden"
@@ -75,53 +72,63 @@ export function Hero() {
           <source src="/hero-video.webm" type="video/webm" />
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/60 to-navy/40" />
+        {/* Refined gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/65 to-navy/50" />
 
         {/* Hero Content */}
-        <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8 lg:py-32">
-          {/* Trust Badges — horizontal strip */}
-          <div className="mb-8 flex items-center gap-6 sm:gap-10">
+        <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8 lg:py-36">
+          {/* Trust Badges */}
+          <div className="mb-10 flex animate-fade-in items-center gap-6 sm:gap-10">
             <div className="text-center">
               <div className="flex items-center justify-center gap-1.5">
                 <Star className="h-5 w-5 fill-star text-star" />
                 <span className="text-2xl font-extrabold text-white sm:text-3xl">4.9</span>
               </div>
-              <div className="mt-1 text-xs text-white/70">Google Rating</div>
+              <div className="mt-1 text-xs tracking-wide text-white/60">Google Rating</div>
             </div>
-            <div className="h-8 w-px bg-white/20" />
+            <div className="h-8 w-px bg-white/15" />
             <div className="text-center">
               <div className="flex items-center justify-center gap-1.5">
-                <Users className="h-5 w-5 text-white/80" />
+                <Users className="h-5 w-5 text-white/70" />
                 <span className="text-2xl font-extrabold text-white sm:text-3xl">3,000+</span>
               </div>
-              <div className="mt-1 text-xs text-white/70">Happy Guests</div>
+              <div className="mt-1 text-xs tracking-wide text-white/60">Happy Guests</div>
             </div>
-            <div className="h-8 w-px bg-white/20" />
+            <div className="h-8 w-px bg-white/15" />
             <div className="text-center">
               <div className="flex items-center justify-center gap-1.5">
-                <Award className="h-5 w-5 text-white/80" />
+                <Award className="h-5 w-5 text-white/70" />
                 <span className="text-2xl font-extrabold text-white sm:text-3xl">#1</span>
               </div>
-              <div className="mt-1 text-xs text-white/70">in Kansas City</div>
+              <div className="mt-1 text-xs tracking-wide text-white/60">in Kansas City</div>
             </div>
           </div>
 
           {/* Headline */}
-          <h1 className="max-w-4xl text-5xl font-extrabold leading-[1.0] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl">
+          <h1
+            className="max-w-4xl animate-fade-in-up text-5xl font-extrabold leading-[1.0] tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl"
+            style={{ animationDelay: "100ms" }}
+          >
             Explore Kansas City by Bus
           </h1>
 
           {/* Subheadline */}
-          <p className="mt-4 max-w-xl text-lg text-white/80">
+          <p
+            className="mt-5 max-w-xl animate-fade-in-up text-lg leading-relaxed text-white/75"
+            style={{ animationDelay: "200ms" }}
+          >
             Reserve now, pay later. Free cancellation 72+ hours out.
           </p>
 
           {/* Availability Bar */}
-          <div className="mt-10 w-full max-w-3xl rounded-[--radius-md] bg-white p-3 shadow-md sm:p-4">
+          <div
+            className="mt-12 w-full max-w-3xl animate-fade-in-up rounded-[--radius-xl] bg-white p-3 shadow-xl sm:p-4"
+            style={{ animationDelay: "350ms" }}
+          >
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-3">
               {/* Tour Type */}
               <div className="flex-1">
-                <label className="mb-1.5 block text-left text-xs font-medium text-text-muted">
+                <label className="mb-1.5 block text-left text-xs font-medium tracking-wide text-text-muted">
                   What are you into?
                 </label>
                 <Select value={tourType} onValueChange={setTourType}>
@@ -140,7 +147,7 @@ export function Hero() {
 
               {/* Date */}
               <div className="flex-1">
-                <label className="mb-1.5 block text-left text-xs font-medium text-text-muted">
+                <label className="mb-1.5 block text-left text-xs font-medium tracking-wide text-text-muted">
                   When?
                 </label>
                 <Select value={dateOption} onValueChange={setDateOption}>
@@ -159,10 +166,10 @@ export function Hero() {
 
               {/* Guests */}
               <div className="w-full sm:w-36">
-                <label className="mb-1.5 block text-left text-xs font-medium text-text-muted">
+                <label className="mb-1.5 block text-left text-xs font-medium tracking-wide text-text-muted">
                   How many guests?
                 </label>
-                <div className="flex h-12 items-center rounded-[--radius-sm] border border-border px-4">
+                <div className="flex h-12 items-center rounded-[--radius-sm] border border-border px-4 transition-colors duration-[--duration-fast] focus-within:border-coral/40">
                   <Users className="mr-2 h-4 w-4 text-text-muted" />
                   <input
                     type="number"
@@ -199,7 +206,7 @@ export function Hero() {
           {PRESS_LOGOS.map((name) => (
             <span
               key={name}
-              className="shrink-0 text-sm font-semibold text-text-muted/60 transition-colors hover:text-text-secondary"
+              className="shrink-0 text-sm font-semibold text-text-muted/60 transition-colors duration-[--duration-fast] hover:text-text-secondary"
             >
               {name}
             </span>
