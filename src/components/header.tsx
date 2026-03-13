@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/logo";
 import { NAV_LINKS, CONTACT } from "@/config/navigation";
 import { BOOKING_LINKS } from "@/config/booking";
 
@@ -28,15 +29,9 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-        {/* Logo / Wordmark */}
-        <Link href="/" className="flex items-center gap-2">
-          <span
-            className={`font-display text-xl font-bold uppercase tracking-wider transition-colors duration-500 ${
-              scrolled ? "text-navy" : "text-white"
-            }`}
-          >
-            Barley Bus
-          </span>
+        {/* Logo */}
+        <Link href="/" className="flex items-center text-base">
+          <Logo variant={scrolled ? "dark" : "white"} />
         </Link>
 
         {/* Desktop Nav */}
