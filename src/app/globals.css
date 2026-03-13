@@ -33,6 +33,10 @@
   --radius-sm: 8px;
   --radius-md: 12px;
 
+  /* Plexify body text sizes */
+  --text-2sm: 15px;
+  --text-2sm--line-height: 19px;
+
   /* Plexify-matched headline sizes (responsive scale) */
   --text-4xxl: 45px;
   --text-4xxl--line-height: 1;
