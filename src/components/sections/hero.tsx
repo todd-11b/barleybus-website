@@ -3,7 +3,7 @@
 export function Hero() {
   return (
     <div className="relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-130 after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
-      <div className="relative z-1 h-full">
+      <div className="relative z-2 h-full">
         <div className="h-full xl:pt-0 lg:pt-7.5 sm:pt-37.75 pt-40">
           <div className="row items-end h-full">
             <div className="md:w-2/3 w-full">
