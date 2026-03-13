@@ -10,8 +10,8 @@ export function Hero() {
     <section className="relative h-[520px] overflow-hidden sm:h-[600px] lg:h-[650px] xl:h-[920px] 3xl:h-[1000px]">
       {/* Background image — priority loaded */}
       <Image
-        src="/hero-poster.jpg"
-        alt="Kansas City brewery tour on the Barley Bus"
+        src="/images/bachelorette/barrel-room-group.jpg"
+        alt="Barley Bus brewery tour group at a barrel room in Kansas City"
         fill
         priority
         className="object-cover object-center"
