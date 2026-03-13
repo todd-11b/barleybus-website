@@ -38,7 +38,7 @@ export function Hero() {
 
               {/* Ghost text — frosted glass clipped to "EXPLORE" shape, exact Plexify technique */}
               <div
-                className="absolute xl:top-[20%] lg:top-0 sm:-top-[8.33%] -top-[20%] sm:-left-[26px] -left-[6px] bottom-0 right-0 bg-white/25"
+                className="absolute xl:top-[20%] lg:top-0 sm:top-[-8.33%] top-[-20%] sm:left-[-26px] left-[-6px] bottom-0 right-0 bg-white/25"
                 style={{
                   clipPath: "url(#svgTextPath)",
                   backdropFilter: "blur(17px)",
