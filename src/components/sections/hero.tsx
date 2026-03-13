@@ -2,7 +2,7 @@
 
 export function Hero() {
   return (
-    <div className="relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-130 after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
+    <div className="relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-130 after:absolute after:inset-0 after:z-1 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
       <div className="relative z-2 h-full">
         <div className="h-full xl:pt-0 lg:pt-7.5 sm:pt-37.75 pt-40">
           <div className="row items-end h-full">
@@ -49,8 +49,6 @@ export function Hero() {
       </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/images/bachelorette/barrel-room-group.jpg" alt="Hero Banner" width={1920} height={1000} className="absolute inset-0 w-full h-full object-cover max-sm:object-[70%]" fetchPriority="high" decoding="async" />
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/bachelorette/barrel-room-group.jpg" alt="Hero Banner" width={1920} height={1000} className="absolute top-0 right-0 size-full z-1 pointer-events-none object-cover object-center max-md:hidden" fetchPriority="high" decoding="async" />
       <div className="absolute right-7.5 bottom-20 flex flex-col gap-2.5 items-center z-1 max-sm:hidden">
         <span className="block text-white text-2sm font-medium uppercase [writing-mode:tb]">Scroll Down</span>
         <button type="button" aria-label="Scroll to next section" className="scroll-down-arrow size-12 flex items-center justify-center rounded-full bg-white text-black cursor-pointer" data-scroll-target="#nextSection">
