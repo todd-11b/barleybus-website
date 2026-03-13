@@ -44,6 +44,23 @@ const oswald = localFont({
   ],
 });
 
+const robotocondensed = localFont({
+  src: [
+    {
+      path: "./fonts/roboto-condensed-black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-roboto-condensed",
+  fallback: [
+    "Roboto Condensed",
+    "Arial Narrow",
+    "sans-serif",
+  ],
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Barley Bus | Kansas City Tours & Party Bus Rentals",
@@ -71,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
+    <html lang="en" className={`${inter.variable} ${oswald.variable} ${robotocondensed.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>
