@@ -23,10 +23,11 @@ const REVIEWS = [
 
 export function Reviews() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="py-24 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <div className="mb-14 text-center">
+          <p className="eyebrow">What Guests Say</p>
+          <h2 className="text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
             What Our Guests Say
           </h2>
         </div>

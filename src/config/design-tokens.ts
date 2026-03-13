@@ -18,9 +18,9 @@ export const DESIGN_TOKENS = {
   // Typography
   fontDisplay: "'Inter', sans-serif",
   fontBody: "'Inter', sans-serif",
-  fontSizeHero: "48px",
-  fontSizeH1: "36px",
-  fontSizeH2: "28px",
+  fontSizeHero: "72px",
+  fontSizeH1: "48px",
+  fontSizeH2: "40px",
   fontSizeBody: "16px",
   fontSizeSmall: "14px",
 

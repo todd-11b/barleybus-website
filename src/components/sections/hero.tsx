@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Star, Users, Calendar, ChevronRight } from "lucide-react";
+import { Star, Users, Award, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -79,23 +79,35 @@ export function Hero() {
 
         {/* Hero Content */}
         <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8 lg:py-32">
-          {/* Trust Signal */}
-          <div className="mb-6 flex items-center gap-1.5 rounded-full bg-white/15 px-4 py-1.5 backdrop-blur-sm">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-4 w-4 fill-star text-star"
-                />
-              ))}
+          {/* Trust Badges — horizontal strip */}
+          <div className="mb-8 flex items-center gap-6 sm:gap-10">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-1.5">
+                <Star className="h-5 w-5 fill-star text-star" />
+                <span className="text-2xl font-extrabold text-white sm:text-3xl">4.9</span>
+              </div>
+              <div className="mt-1 text-xs text-white/70">Google Rating</div>
             </div>
-            <span className="ml-1 text-sm font-medium text-white">
-              4.9 from 1,800+ reviews
-            </span>
+            <div className="h-8 w-px bg-white/20" />
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-1.5">
+                <Users className="h-5 w-5 text-white/80" />
+                <span className="text-2xl font-extrabold text-white sm:text-3xl">3,000+</span>
+              </div>
+              <div className="mt-1 text-xs text-white/70">Happy Guests</div>
+            </div>
+            <div className="h-8 w-px bg-white/20" />
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-1.5">
+                <Award className="h-5 w-5 text-white/80" />
+                <span className="text-2xl font-extrabold text-white sm:text-3xl">#1</span>
+              </div>
+              <div className="mt-1 text-xs text-white/70">in Kansas City</div>
+            </div>
           </div>
 
           {/* Headline */}
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="max-w-4xl text-5xl font-extrabold leading-[1.0] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl">
             Explore Kansas City by Bus
           </h1>
 

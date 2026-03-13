@@ -27,15 +27,15 @@ const CATEGORIES = [
 
 export function TourCategories() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Find Your Experience
+        <div className="mb-14 text-center">
+          <p className="eyebrow">Find Your Experience</p>
+          <h2 className="text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
+            Curated KC Tours & Events
           </h2>
-          <p className="mx-auto mt-3 max-w-lg text-text-secondary">
-            Curated tours for every taste. Breweries, food, sightseeing, or
-            something custom — we&rsquo;ve got you.
+          <p className="mx-auto mt-4 max-w-lg text-text-secondary">
+            Breweries, food, sightseeing, or something custom — we&rsquo;ve got you.
           </p>
         </div>
 

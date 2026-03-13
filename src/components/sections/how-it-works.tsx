@@ -20,14 +20,15 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="py-24 lg:py-32">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            How It Works
+        <div className="mb-14 text-center">
+          <p className="eyebrow">How It Works</p>
+          <h2 className="text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
+            Three Steps. Zero Stress.
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-text-secondary">
-            Three steps. Zero stress. We make it easy.
+          <p className="mx-auto mt-4 max-w-md text-text-secondary">
+            We make it easy so you can focus on having fun.
           </p>
         </div>
 

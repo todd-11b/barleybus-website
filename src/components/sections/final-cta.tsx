@@ -5,9 +5,10 @@ import { CONTACT } from "@/config/navigation";
 
 export function FinalCTA() {
   return (
-    <section className="bg-coral py-20 lg:py-24">
+    <section className="bg-coral py-24 lg:py-32">
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <p className="eyebrow !text-white/60">Ready?</p>
+        <h2 className="text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl">
           Ready for Your Next Kansas City Adventure?
         </h2>
         <p className="mx-auto mt-4 max-w-lg text-lg text-white/85">

@@ -25,7 +25,7 @@ const GUARANTEES = [
 
 export function Guarantees() {
   return (
-    <section className="border-y border-border bg-white py-12">
+    <section className="border-y border-border bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
           {GUARANTEES.map((g) => (
