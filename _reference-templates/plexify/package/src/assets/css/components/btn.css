@@ -1,0 +1,77 @@
+.btn {
+  display: inline-flex;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--btn-radius);
+  line-height: var(--leading-tight);
+  padding: --spacing(3.5) --spacing(8.75);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid;
+  transition-duration: 0.3s;
+}
+
+.btn-primary {
+  @apply text-black bg-primary border-primary hover:bg-primarydark hover:border-primarydark;
+}
+
+.btn-secondary {
+  @apply text-primary bg-secondary border-secondary;
+}
+
+.btn-white {
+  @apply text-secondary bg-white border-white;
+}
+
+.btn-hover span {
+  @apply relative z-1;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.btn-hover:hover {
+  @apply border-secondary text-white;
+}
+
+.light.btn-hover:hover {
+  @apply border-white text-secondary;
+}
+
+.btn-hover::after,
+.btn-hover::before {
+  @apply content-[''] absolute w-full h-0 bg-secondary -rotate-12 duration-300;
+}
+
+.light.btn-hover::after,
+.light.btn-hover::before {
+  @apply bg-white;
+}
+
+.btn-hover::after {
+  @apply right-0;
+}
+
+.btn-hover::before {
+  @apply left-0;
+}
+
+.btn-hover:hover::after,
+.btn-hover:hover::before {
+  @apply h-[400%];
+}
+
+.btn-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hover .gsap-clone {
+  position: absolute;
+  left: var(--clone-left);
+  top: var(--clone-top);
+  transform: translateY(-170%);
+  pointer-events: none;
+}
