@@ -1,0 +1,36 @@
+.pxl-team-list .project::before, .pxl-team-list .project::after {
+	@apply content-[''] absolute h-0 w-full left-1/2 -translate-x-1/2 z-1 bg-no-repeat sm:block hidden pointer-events-none;
+	transition: height 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.pxl-team-list .project::before {
+	@apply bottom-1/2 bg-primary;
+}
+.pxl-team-list .project::after {
+	@apply top-1/2 bg-primary;
+}
+.pxl-team-list .project:hover::before, .pxl-team-list .project:hover::after {
+	@apply sm:h-1/2 h-[51%];
+}
+
+.pxl-team-list .item-image {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* vertical centering */
+.pxl-team-list .item-image.is-centered {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* horizontal positioning */
+.pxl-team-list .item-image.is-left {
+  left: var(--reveal-left);
+  right: auto;
+}
+
+.pxl-team-list .item-image.is-right {
+  right: var(--reveal-right);
+  left: auto;
+}

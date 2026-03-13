@@ -1,0 +1,127 @@
+@layer base {
+    * {
+        scrollbar-width: thin;
+    }
+    body {
+        @apply font-base bg-bodybg selection:bg-primary selection:text-white text-bodycolor;
+    }
+    section {
+        @apply relative;
+    }
+    h1, .h1, h2, .h2, h3, .h3 {
+        @apply font-semibold leading-[1.1] text-heading font-title;
+    }
+    h4, .h4, h5, .h5, h6, .h6 {
+        @apply font-semibold leading-[1.1] text-heading font-title;
+    }
+    
+}
+@layer utilities {
+    .content-counter::after {
+      content: "0" counter(counter-item);
+    }
+  }
+a{
+    @apply duration-500;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type="date"] {
+    -moz-appearance: none;
+    appearance: none;
+}
+
+textarea ,
+input {
+  @apply outline-0 outline-none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+.link-hover {
+  @apply relative hover:after:w-full hover:after:left-0 hover:after:right-auto;
+}
+.link-hover::after {
+  @apply content-[''] absolute h-px bg-secondary bottom-0 right-0 w-0 duration-500 ;
+}
+
+#videoContainer iframe,
+#videoContainer video {
+    width: 100%;
+    height: 676px;
+    border: none;
+    border-radius: 8px;
+}
+
+#videoDialog {
+  display: none; 
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#videoDialog.is-open {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scrollProgress.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dzSubscribeMsg .alert-success ,
+.dzFormMsg .alert-success {
+  @apply text-green-900 bg-green-200 p-20 mb-10;
+}
+
+.my-sticky {
+  width: 100%;
+}
+
+.my-sticky + .pin-spacer,
+.pin-spacer:has(.my-sticky) {
+  width: auto !important;
+  flex: 0 1 auto !important;
+}
+
+.sticky-spacer {
+  position: relative;
+  height: var(--spacer-height);
+}
+
+.is-sticky {
+  position: absolute;
+  top: var(--sticky-top);
+  left: 0;
+  right: 0;
+}
+
+.gsap-pin-spacer-fix {
+  width: auto !important;
+  flex-basis: auto !important;
+  max-width: none !important;
+}
+
+#scrollProgress circle {
+  stroke-dasharray: var(--circumference);
+  stroke-dashoffset: var(--progress-offset);
+  transition: stroke-dashoffset 0.1s linear;
+}

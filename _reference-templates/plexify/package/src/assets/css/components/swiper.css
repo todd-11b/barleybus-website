@@ -1,0 +1,213 @@
+.pxl-history-carousel.layout-1 {
+    @apply relative select-none;
+}
+  
+.pxl-history-carousel.layout-1 .content-item {
+    @apply text-center;
+}
+  
+.pxl-history-carousel.layout-1 .item-title {
+    @apply text-2xxl font-semibold mb-3;
+}
+  
+@media (max-width: 575px) {
+    .pxl-history-carousel.layout-1 .item-title {
+      @apply text-2xl;
+    }
+}
+  
+.pxl-history-carousel.layout-1 .item-des, .pxl-history-carousel.layout-1 .item-des > * {
+    @apply font-normal max-w-94.5 mx-auto text-lg leading-6 overflow-hidden text-ellipsis line-clamp-6;
+}
+  
+  
+@media (max-width: 575px) {
+    .pxl-history-carousel.layout-1 .item-des {
+      @apply text-base leading-5.5 max-w-82.5;
+    }
+}
+  
+.pxl-history-carousel.layout-1 .pxl-button-more {
+    @apply mt-13;
+}
+  
+@media (max-width: 575px) {
+    .pxl-history-carousel.layout-1 .pxl-button-more {
+      @apply mt-8.75;
+    }
+}
+  
+.pxl-history-carousel.layout-1 .pxl-button-more .pxl-icon {
+    @apply flex overflow-hidden;
+}
+  
+.pxl-history-carousel.layout-1 .pxl-button-more .btn-primary {
+    @apply gap-1.25;
+}
+  
+.pxl-history-carousel.layout-1 .pxl-button-more .btn-primary:hover i {
+      animation: toTopFromBottom 0.4s forwards;
+}
+  
+.pxl-history-carousel.layout-1 .item-inner {
+    @apply flex flex-col items-center;
+}
+  
+.pxl-history-carousel.layout-1 .pxl-swiper-container {
+    @apply px-6 py-8.75;
+}
+  
+.pxl-history-carousel.layout-1 .item-slide {
+	@apply absolute top-[64.5%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-[width,height] duration-1000 flex justify-center items-center p-0 overflow-hidden w-115 h-auto;
+}
+  
+.pxl-swiper-wrapper {
+    @apply relative size-full z-1 flex duration-400 box-content;
+}
+  
+.align-items-center {
+    @apply items-center;
+}
+  
+.elementor *, .elementor :after, .elementor :before {
+      box-sizing: border-box;
+}
+  
+.pxl-history-carousel.layout-1 .pxl-swiper-wrapper {
+    @apply relative top-0 left-0 overflow-visible z-2 h-395 -mb-231.75;
+}
+  
+@media (max-width: 1199px) {
+    .pxl-history-carousel.layout-1 .pxl-swiper-wrapper {
+      @apply -mb-241.5;
+    }
+}
+  
+@media (max-width: 991px) {
+    .pxl-history-carousel.layout-1 .pxl-swiper-wrapper {
+      @apply -mb-246.5;
+    }
+}
+  
+@media (max-width: 767px) {
+    .pxl-history-carousel.layout-1 .pxl-swiper-wrapper {
+      @apply h-375 -mb-262.5;
+    }
+    .pxl-history-carousel.layout-1 .pxl-swiper-wrapper .item-slide:nth-child(even) .item-image {
+      opacity: 0 !important;
+      transition: all 300ms ease-in-out 0s;
+	}
+}
+  
+.pxl-history-carousel.layout-1 .box-pev-next {
+	@apply absolute z-10 left-1/2 transform -translate-x-1/2 text-center bottom-[20%];
+}
+  
+@media (max-width: 767px) {
+    .pxl-history-carousel.layout-1 .box-pev-next {
+      @apply bottom-0;
+    }
+}
+
+.pxl-history-carousel .box-pev-next .text-pev-next {
+    @apply bg-bodybg;
+}
+  
+.pxl-history-carousel.layout-1 .box-pev-next .text-pev-next {
+    @apply text-xs font-medium leading-[2] uppercase relative px-1.5 inline-block rounded;
+}
+  
+.pxl-history-carousel.layout-1 .box-pev-next .text-pev-next::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 158px;
+	height: 1px;
+	z-index: -1;
+}
+ .pxl-history-carousel.layout-1 .box-pev-next .text-pev-next::after {
+	background: linear-gradient(90deg, rgba(25, 27, 29, 0) 0%, rgb(87 87 90 / 40%) 50.5%, rgba(25, 27, 29, 0) 100%);	
+}
+.pxl-history-carousel.layout-1 .pxl-swiper-dots {
+    @apply flex justify-center mt-5;
+}
+  
+.pxl-history-carousel.layout-1 .thumb-item {
+	@apply w-auto transform scale-100 opacity-60;
+}
+  
+.pxl-history-carousel.layout-1 .thumb-item .item-year {
+    @apply text-lg leading-7.5 text-secondary;
+}
+  
+@media (max-width: 575px) {
+	.pxl-history-carousel.layout-1 .thumb-item .item-year {
+      @apply text-base;
+    }
+}
+  
+.pxl-history-carousel.layout-1 .thumb-item.active {
+    @apply opacity-100 scale-100;
+}
+  
+.pxl-history-carousel.layout-1 .thumb-item.active .item-year {
+    @apply text-2xxl;
+}
+  
+@media (max-width: 575px) {
+    .pxl-history-carousel.layout-1 .thumb-item.active .item-year {
+      @apply text-2xl;
+    }
+}
+  
+.pxl-history-carousel.layout-1 .pxl-thumbs-wrapper {
+    @apply gap-6.25;
+}
+  
+.pxl-history-carousel.layout-1 .pxl-swiper-thumbs {
+    @apply max-w-52.5;
+}
+  
+.pxl-history-carousel.layout-1 .pxl-swiper-slider-thumbs {
+	@apply mt-3.5;
+}
+  
+.pxl-history-carousel.layout-1 .pxl-carousel-inner {
+	@apply pt-19.5;
+}
+  
+@media (max-width: 991px) {
+	.pxl-history-carousel.layout-1 .pxl-carousel-inner {
+	@apply pt-7.5;
+	}
+}
+  
+@media (max-width: 575px) {
+    .pxl-history-carousel.layout-1 .pxl-carousel-inner {
+	@apply pt-0;
+    }
+}
+.swiper-pagination-bullets .swiper-pagination-bullet {
+    @apply size-2.5 bg-white;
+}
+
+.status-modal .swiper-pagination-bullets .swiper-pagination-bullet {
+    @apply !relative !h-1.25 !w-full !rounded-2lg;
+}
+
+.modal.status-modal .status-pagination .swiper-pagination-bullet::after {
+    content: "";
+    height: 100%;
+    width: 0;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal.status-modal .status-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+    width: 100%;
+    transition: 3.5s linear;
+}
