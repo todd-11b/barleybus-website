@@ -48,6 +48,7 @@
   --text-15xl--line-height: 1;
 
   /* Plexify breakpoints for hero scaling */
+  --breakpoint-2xxl: 1481px;
   --breakpoint-3xl: 1681px;
 
   /* Animation for header slide down */
