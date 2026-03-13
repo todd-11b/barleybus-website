@@ -1,24 +1,43 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { BOOKING_LINKS } from "@/config/booking";
 
 export function Hero() {
+  const textRef = useRef<SVGTextElement>(null);
+
+  // Reposition SVG clip text y-position based on viewport so "EXPLORE" is fully visible at all sizes
+  useEffect(() => {
+    function updateTextPosition() {
+      const el = textRef.current;
+      if (!el) return;
+      const vw = window.innerWidth;
+      // Scale y proportionally: at 1920px → y=320, at 375px → y=100
+      // Linear interpolation: y = 100 + (vw - 375) * (320 - 100) / (1920 - 375)
+      const y = Math.round(100 + ((vw - 375) * 220) / 1545);
+      el.setAttribute("y", String(Math.max(80, Math.min(360, y))));
+    }
+    updateTextPosition();
+    window.addEventListener("resize", updateTextPosition);
+    return () => window.removeEventListener("resize", updateTextPosition);
+  }, []);
+
   return (
-    <section className="relative z-[1] overflow-hidden h-[520px] sm:h-[600px] lg:h-[650px] xl:h-[920px] 3xl:h-[1000px] after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
-      <div className="relative z-[1] h-full">
-        <div className="h-full xl:pt-0 lg:pt-[30px] sm:pt-[151px] pt-[160px]">
+    <section className="relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-130 after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
+      <div className="relative z-1 h-full">
+        <div className="h-full xl:pt-0 lg:pt-7.5 sm:pt-37.75 pt-40">
           <div className="flex flex-wrap items-end h-full">
             <div className="md:w-2/3 w-full">
-              <div className="relative z-[1] xl:p-20 lg:p-[60px] md:py-[50px] py-6 md:px-5 px-5 sm:pe-20">
-                {/* Headline — exact Plexify scale */}
+              <div className="relative z-1 xl:p-20 lg:p-15 md:py-12.5 py-6 md:px-5 px-5 sm:pe-20">
+                {/* Headline — exact Plexify responsive scale */}
                 <h1 className="3xl:text-15xl 2xxl:text-12xl xl:text-10xl md:text-8xl sm:text-6xl text-4xxl font-bold mb-2.5 text-white !leading-none uppercase">
                   Kansas City
                 </h1>
 
-                {/* Subheadline */}
+                {/* Subheadline — Barley Bus addition */}
                 <p className="mt-4 max-w-md text-base leading-relaxed text-white/70 sm:mt-5 sm:text-lg md:max-w-lg md:text-xl">
                   Brewery tours, food crawls, and sightseeing — all from the best seat in KC.
                 </p>
@@ -36,9 +55,9 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Ghost text — frosted glass clipped to "EXPLORE" shape, exact Plexify technique */}
+              {/* Ghost text — frosted glass clipped to "EXPLORE" shape, exact Plexify .clipped technique */}
               <div
-                className="absolute xl:top-[20%] lg:top-0 sm:-top-[8.33%] -top-[20%] sm:-left-[26px] -left-[6px] bottom-0 right-0 bg-white/25"
+                className="absolute xl:top-1/5 lg:top-0 sm:-top-1/12 -top-1/5 sm:-left-6.5 -left-1.5 bottom-0 right-0 bg-white/25"
                 style={{
                   clipPath: "url(#svgTextPath)",
                   backdropFilter: "blur(17px)",
@@ -49,6 +68,7 @@ export function Hero() {
                 <defs>
                   <clipPath id="svgTextPath" clipPathUnits="userSpaceOnUse">
                     <text
+                      ref={textRef}
                       style={{ fontSize: "23vw" }}
                       x="0"
                       y="320"
@@ -75,9 +95,9 @@ export function Hero() {
         sizes="100vw"
       />
 
-      {/* Scroll indicator — exact Plexify position */}
-      <div className="absolute right-[30px] bottom-20 flex flex-col gap-2.5 items-center z-[1] max-sm:hidden">
-        <span className="block text-white text-[15px] font-medium uppercase [writing-mode:vertical-lr]">Scroll Down</span>
+      {/* Scroll indicator — exact Plexify position and markup */}
+      <div className="absolute right-7.5 bottom-20 flex flex-col gap-2.5 items-center z-1 max-sm:hidden">
+        <span className="block text-white text-2sm font-medium uppercase [writing-mode:tb]">Scroll Down</span>
         <button
           type="button"
           aria-label="Scroll to next section"
