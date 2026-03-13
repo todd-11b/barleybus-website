@@ -1,75 +1,96 @@
 "use client";
 
-import { Star, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { BOOKING_LINKS } from "@/config/booking";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden">
-      {/* Background image — replace src with real hero photo */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero-placeholder.jpg')" }}
-      />
+    <section className="relative z-[1] overflow-hidden h-[520px] sm:h-[600px] lg:h-[650px] xl:h-[920px] 3xl:h-[1000px] after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
+      <div className="relative z-[1] h-full">
+        <div className="h-full xl:pt-0 lg:pt-[30px] sm:pt-[151px] pt-[160px]">
+          <div className="flex flex-wrap items-end h-full">
+            <div className="md:w-2/3 w-full">
+              <div className="relative z-[1] xl:p-20 lg:p-[60px] md:py-[50px] py-6 md:px-5 px-5 sm:pe-20">
+                {/* Headline — exact Plexify scale */}
+                <h1 className="3xl:text-15xl 2xxl:text-12xl xl:text-10xl md:text-8xl sm:text-6xl text-4xxl font-bold mb-2.5 text-white !leading-none uppercase">
+                  Kansas City
+                </h1>
 
-      {/* Gradient overlay — heavier at bottom for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                {/* Subheadline */}
+                <p className="mt-4 max-w-md text-base leading-relaxed text-white/70 sm:mt-5 sm:text-lg md:max-w-lg md:text-xl">
+                  Brewery tours, food crawls, and sightseeing — all from the best seat in KC.
+                </p>
 
-      {/* Ghost text — large faded word behind content */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-end"
-      >
-        <span className="select-none pb-[18vh] pl-4 font-display text-[20vw] font-bold uppercase leading-none tracking-tighter text-white/[0.07] sm:pl-6 lg:pl-8">
-          Explore
-        </span>
-      </div>
+                {/* CTA button — pill shape */}
+                <div className="mt-6 sm:mt-8">
+                  <Button
+                    size="lg"
+                    onClick={() => window.open(BOOKING_LINKS.hub, "_blank")}
+                    className="gap-3"
+                  >
+                    <span>Find Your Tour</span>
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                </div>
+              </div>
 
-      {/* Hero content — anchored bottom-left like Plexify */}
-      <div className="relative flex min-h-[100svh] flex-col justify-end px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
-        <div className="mx-auto w-full max-w-7xl">
-          {/* Trust badge */}
-          <div
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm"
-            style={{ animationDelay: "0.1s" }}
-          >
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-3.5 w-3.5 fill-star text-star"
-                />
-              ))}
+              {/* Ghost text — frosted glass clipped to "EXPLORE" shape, exact Plexify technique */}
+              <div
+                className="absolute xl:top-[20%] lg:top-0 sm:-top-[8.33%] -top-[20%] sm:-left-[26px] -left-[6px] bottom-0 right-0 bg-white/25"
+                style={{
+                  clipPath: "url(#svgTextPath)",
+                  backdropFilter: "blur(17px)",
+                  WebkitBackdropFilter: "blur(17px)",
+                }}
+              />
+              <svg width="0" height="0" aria-hidden="true" className="absolute">
+                <defs>
+                  <clipPath id="svgTextPath" clipPathUnits="userSpaceOnUse">
+                    <text
+                      style={{ fontSize: "23vw" }}
+                      x="0"
+                      y="320"
+                      fontFamily="Oswald, Roboto Condensed, sans-serif"
+                      fontWeight="900"
+                    >
+                      EXPLORE
+                    </text>
+                  </clipPath>
+                </defs>
+              </svg>
             </div>
-            <span className="text-sm font-medium text-white/90">
-              4.9 from 1,800+ reviews
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1 className="max-w-4xl text-5xl font-bold uppercase leading-[1.05] tracking-[--tracking-hero] text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem]">
-            Explore
-            <br />
-            Kansas City
-          </h1>
-
-          {/* Subheadline */}
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/70 sm:text-xl">
-            Reserve now, pay later. Free cancellation 72+ hours out.
-          </p>
-
-          {/* CTA button */}
-          <div className="mt-8">
-            <Button
-              size="xl"
-              onClick={() => window.open(BOOKING_LINKS.hub, "_blank")}
-            >
-              Find Your Tour
-              <ArrowRight className="h-5 w-5" />
-            </Button>
           </div>
         </div>
+      </div>
+
+      {/* Background image */}
+      <Image
+        src="/images/bachelorette/barrel-room-group.jpg"
+        alt="Barley Bus brewery tour group at a barrel room in Kansas City"
+        fill
+        priority
+        className="absolute inset-0 w-full h-full object-cover max-sm:object-[70%]"
+        sizes="100vw"
+      />
+
+      {/* Scroll indicator — exact Plexify position */}
+      <div className="absolute right-[30px] bottom-20 flex flex-col gap-2.5 items-center z-[1] max-sm:hidden">
+        <span className="block text-white text-[15px] font-medium uppercase [writing-mode:vertical-lr]">Scroll Down</span>
+        <button
+          type="button"
+          aria-label="Scroll to next section"
+          onClick={() => {
+            window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+          }}
+          className="size-12 flex items-center justify-center rounded-full bg-white text-black cursor-pointer"
+        >
+          <svg width="14" height="23" viewBox="0 0 14 23" fill="none">
+            <path d="M6.83 0.75V21.32" stroke="black" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M12.67 15.49L6.83 21.33L1 15.49" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
       </div>
     </section>
   );
