@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { HeroTest } from "@/components/sections/hero-test";
 
 export default function HomePage() {
   return (
@@ -31,8 +32,11 @@ export default function HomePage() {
         }}
       />
 
-      {/* Section 1 — Hero (Plexify exact copy) */}
+      {/* Section 1 — Hero */}
       <Hero />
+
+      {/* Section 2 — Plexify exact copy for testing */}
+      <HeroTest />
     </>
   );
 }
