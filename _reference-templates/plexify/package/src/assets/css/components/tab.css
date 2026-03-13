@@ -1,0 +1,17 @@
+.tab-title.tab-underline.active a::after ,
+.tab-title.tab-underline.active button::after {
+    width: 100%;
+}
+.tab-title.tab-underline.active a  {
+    @apply text-secondary;
+}
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+.banner-tab .tab-content.active {
+  display: flex;
+}

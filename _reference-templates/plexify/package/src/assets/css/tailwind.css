@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@import "./abstract/variable.css";
+@import "./base/base.css";
+@import "./components/components.css";
+@import "./layout/layout.css";
+@import "./pages/page.css";
+
+/* CUSTOM THEME */
+@theme {
+
+    /* SPACING */
+    --spacing: .25rem;
+
+    /* FONT FAMILY */
+    --font-base: "Poppins", "sans-serif";
+    --font-title: "Oswald", "Sans-serif";
+    --font-roboto: "Roboto Condensed", "Sans-serif";
+
+    /* COLORS */
+    --color-primary: var(--primary);
+    --color-primarydark: var(--primarydark);
+    --color-secondary: var(--secondary);
+
+    --color-bodybg: var(--body-bg);
+    --color-bodycolor: var(--body-color);
+    --color-heading: var(--heading);
+    --color-card: var(--card);
+    --color-light: var(--light);
+
+    --color-green: #3CFF78;
+
+    /* FONTSIZE */
+    --text-tiny: 10px;
+    --text-2xs: 13px;
+    --text-2xs--line-height: 1;
+    --text-2sm: 15px;
+    --text-2sm--line-height: 19px;
+    --text-2xxl: 1.75rem;
+    --text-2xxl--line-height: 1.4;
+    --text-3xxl: 35px;
+    --text-3xxl--line-height: 1.3;
+    --text-4xl: 40px;
+    --text-4xl--line-height: 1.3;
+    --text-4xxl: 45px;
+    --text-4xxl--line-height: 1.3;
+    --text-5xl: 50px;
+    --text-5xl--line-height: 1.2;
+    --text-5xxl: 55px;
+    --text-5xxl--line-height: 1.2;
+    --text-6xl: 60px;
+    --text-6xl--line-height: 1.2;
+    --text-6xxl: 65px;
+    --text-6xxl--line-height: 1.2;
+    --text-72: 72px;
+    --text-72--line-height: 1.2;
+    --text-7xl: 70px;
+    --text-7xl--line-height: 1.2;
+    --text-7xxl: 75px;
+    --text-7xxl--line-height: 1.2;
+    --text-8xl: 80px;
+    --text-8xl--line-height: 1.2;
+    --text-8xxl: 85px;
+    --text-8xxl--line-height: 1.2;
+    --text-9xl: 90px;
+    --text-9xxl: 95px;
+    --text-10xl: 100px;
+    --text-11xl: 110px;
+    --text-11xxl: 115px;
+    --text-12xl: 120px;
+    --text-15xl: 150px;
+    --text-44xl: 440px;
+
+    /* BREAKPOINTS */
+    --breakpoint-*: initial;
+    --breakpoint-xs: 425px;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1199px;
+    --breakpoint-xxl: 1281px;
+    --breakpoint-2xl: 1400px;
+    --breakpoint-2xxl: 1481px;
+    --breakpoint-3xl: 1681px;
+    --breakpoint-4xl: 1800px;
+
+    --max-breakpoint-sm: 575px;
+    --max-breakpoint-md: 768px;
+    --max-breakpoint-lg: 991px;
+    --max-breakpoint-xl: 1199px;
+    --max-breakpoint-2xl: 1480px;
+    --max-breakpoint-3xl: 1680px;
+    --max-breakpoint-4xl: 1800px;
+
+    /* BACKGROUND IMAGE */
+    --background-image-check: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%3E%3Cpath%20d='M26.3522%2016.6905C25.8018%2015.8344%2025.2515%2015.0089%2024.7012%2014.1528C24.5789%2013.9694%2024.5789%2013.8471%2024.7012%2013.6636C25.2515%2012.8381%2025.7713%2012.0126%2026.3216%2011.1871C26.9637%2010.2087%2026.6274%209.26087%2025.5267%208.8634C24.6094%208.52708%2023.6922%208.16018%2022.775%207.82386C22.5915%207.76271%2022.4998%207.64041%2022.4998%207.42639C22.4692%206.41742%2022.4081%205.40846%2022.3469%204.43007C22.2858%203.35995%2021.4602%202.74846%2020.4207%203.02363C19.4423%203.26823%2018.4639%203.5434%2017.5161%203.81857C17.3021%203.87972%2017.1798%203.81857%2017.0269%203.6657C16.4154%202.87076%2015.7733%202.10639%2015.1618%201.34202C14.4892%200.485928%2013.4497%200.485928%2012.7464%201.34202C12.135%202.10639%2011.4929%202.87076%2010.912%203.63512C10.7591%203.84915%2010.6062%203.87972%2010.3616%203.81857C9.4138%203.5434%208.46599%203.2988%207.79335%203.11535C6.47863%202.80961%205.68369%203.32938%205.62254%204.43007C5.56139%205.43903%205.50024%206.448%205.46967%207.48754C5.46967%207.70156%205.37794%207.79329%205.1945%207.88501C4.24668%208.25191%203.29887%208.6188%202.35105%208.9857C1.37266%209.38318%201.06691%2010.331%201.64783%2011.2177C2.19818%2012.0738%202.74852%2012.8993%203.29886%2013.7554C3.42116%2013.9388%203.42116%2014.0611%203.29886%2014.2751C2.71794%2015.1312%202.1676%2015.9873%201.61725%2016.874C1.09748%2017.6995%201.4338%2018.6779%202.35104%2019.0448C3.29886%2019.4117%204.27725%2019.7786%205.22506%2020.1455C5.43909%2020.2066%205.50024%2020.3289%205.50024%2020.5429C5.53081%2021.5213%205.65311%2022.4691%205.65311%2023.4475C5.65311%2024.4259%206.5092%2025.3126%207.70161%2024.9457C8.64943%2024.64%209.59724%2024.4259%2010.5451%2024.1508C10.7285%2024.0896%2010.8508%2024.1202%2010.9731%2024.3036C11.6152%2025.0986%2012.2267%2025.8629%2012.8687%2026.6579C13.572%2027.514%2014.5809%2027.514%2015.2536%2026.6579C15.8956%2025.8629%2016.5071%2025.0986%2017.1492%2024.3036C17.2715%2024.1508%2017.3632%2024.0896%2017.5772%2024.1508C18.5556%2024.4259%2019.534%2024.6705%2020.5124%2024.9457C21.5214%2025.2209%2022.3775%2024.6094%2022.408%2023.5698C22.4692%2022.5609%2022.5303%2021.5519%2022.5609%2020.5124C22.5609%2020.2678%2022.6832%2020.176%2022.8667%2020.1149C23.7839%2019.7786%2024.7317%2019.4117%2025.649%2019.0448C26.6274%2018.5556%2026.9331%2017.5772%2026.3522%2016.6905ZM19.0448%2011.6763L12.9299%2017.7912C12.777%2017.9441%2012.563%2018.0664%2012.349%2018.097C12.2878%2018.097%2012.1961%2018.1275%2012.135%2018.1275C11.8598%2018.1275%2011.554%2018.0052%2011.34%2017.7912L8.83289%2015.2841C8.40485%2014.856%208.40485%2014.1528%208.83289%2013.7248C9.26093%2013.2967%209.96415%2013.2967%2010.3922%2013.7248L12.1044%2015.437L17.4244%2010.117C17.8524%209.68892%2018.5556%209.68892%2018.9837%2010.117C19.4729%2010.545%2019.4729%2011.2482%2019.0448%2011.6763Z'%20fill='%23C8F31D'/%3E%3C/svg%3E");
+
+    /* GRADIENT */
+    --img-hover-gradient: to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%;
+
+    /* SHADOW */
+    --shadow-1: 0px 5px 40px rgba(0, 0, 0, 0.1);
+
+    /* Z-INDEX */
+    --z-index-1: 1;
+    --z-index-2: 2;
+    --z-index-4: 4;
+    --z-index-9: 9;
+    --z-index-99: 99;
+    --z-index-999: 999;
+    --z-index-9999: 9999;
+    --z-index-99999: 99999;
+    --z-index-999999: 999999;
+
+    /*  BORDER RADIUS*/
+    --radius-2lg: 10px;
+    --radius-xxl: 15px;
+    --radius-2xl: 20px;
+    --radius-2xxl: 25px;
+    --radius-3xl: 30px;
+    --radius-3xxl: 35px;
+    --radius-4xl: 40px;
+    --radius-4xxl: 45px;
+    --radius-5xl: 50px;
+    --radius-6xl: 60px;
+    --radius-8xl: 80px;
+    --radius-9xl: 90px;
+    --radius-10xl: 100px;
+
+    /* ANIMATIONS */
+    --animate-move1: move1 4s infinite;
+    --animate-move2: move2 8s infinite;
+    --animate-move3: move3 5s infinite;
+    --animate-move4: move4 5s infinite;
+    --animate-dzShine: dzShine .75s;
+    --animate-move: move 5s infinite linear;
+    --animate-rotate: rotate 50s infinite linear;
+    --animate-dzRing: dzRing 1.2s infinite ease-in-out;
+    --animate-anglerotate: anglerotate 20s linear;
+    --animate-ticker: ticker 50s linear infinite 0s normal;
+    --animate-toTopFromBottom: toTopFromBottom 0.8s ease 0s 1 normal forwards running;
+    --animate-toRightFromLeft: toRightFromLeft 0.8s ease 0s 1 normal forwards running;
+    --animate-zoom: zoom 30s linear;
+    --animate-ScaleInOut: ScaleInOut 30s linear infinite;
+    --animate-bounceShake: bounceShake 1.5s ease-in-out infinite;
+    --animate-rocketLaunch: rocketLaunch 10s ease-in-out infinite;
+    --animate-wordRotateOut: wordRotateOut 0.8s cubic-bezier(0.86, 0, 0.07, 1) both;
+    --animate-wordRotateIn: wordRotateIn 0.8s cubic-bezier(0.86, 0, 0.07, 1) both;
+    --animate-headerSlideDown: headerSlideDown 0.95s ease 0s normal forwards 1 running;
+}
