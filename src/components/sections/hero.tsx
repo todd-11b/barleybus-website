@@ -18,45 +18,50 @@ export function Hero() {
         sizes="100vw"
       />
 
-      {/* Gradient overlay — bottom half only, matching Plexify */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent md:bg-gradient-to-b md:from-transparent md:via-transparent md:to-black/70" />
+      {/* Gradient overlay — heavier at bottom for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
 
-      {/* SVG ghost text — clipPath technique from Plexify */}
-      <svg
+      {/* Ghost text "EXPLORE" — SVG clipPath from Plexify, sits behind content */}
+      <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full select-none"
-        preserveAspectRatio="xMinYMax meet"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1] select-none overflow-hidden"
+        style={{ height: "60%" }}
       >
-        <defs>
-          <clipPath id="ghostTextClip" clipPathUnits="userSpaceOnUse">
-            <text
-              x="0"
-              y="95%"
-              className="text-[23vw]"
-              fontFamily="var(--font-oswald), Oswald, sans-serif"
-              fontWeight="700"
-            >
-              EXPLORE
-            </text>
-          </clipPath>
-        </defs>
-        <rect
-          width="100%"
-          height="100%"
-          fill="white"
-          opacity="0.06"
-          clipPath="url(#ghostTextClip)"
-        />
-      </svg>
+        <svg
+          className="absolute bottom-0 left-0 h-full w-full"
+          viewBox="0 0 1920 500"
+          preserveAspectRatio="xMinYMax slice"
+        >
+          <defs>
+            <clipPath id="ghostTextClip">
+              <text
+                x="-10"
+                y="460"
+                fontSize="420"
+                fontFamily="Oswald, Impact, sans-serif"
+                fontWeight="700"
+                letterSpacing="-5"
+              >
+                EXPLORE
+              </text>
+            </clipPath>
+          </defs>
+          <rect
+            width="1920"
+            height="500"
+            fill="white"
+            opacity="0.07"
+            clipPath="url(#ghostTextClip)"
+          />
+        </svg>
+      </div>
 
       {/* Hero content — bottom-left anchored, Plexify layout */}
       <div className="relative z-10 flex h-full items-end">
         <div className="w-full md:w-2/3">
           <div className="px-5 pb-8 sm:pe-20 md:px-10 md:pb-12 lg:p-15 xl:p-20">
             {/* Headline — Plexify responsive scale with Oswald */}
-            <h1 className="font-display text-4xxl font-bold uppercase leading-none text-white sm:text-6xl md:text-8xl xl:text-10xl 3xl:text-12xl">
-              Explore
-              <br />
+            <h1 className="font-display text-4xxl font-bold uppercase leading-none text-white sm:text-6xl md:text-8xl xl:text-10xl 3xl:text-15xl">
               Kansas City
             </h1>
 
