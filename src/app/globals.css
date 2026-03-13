@@ -172,6 +172,60 @@
   height: 400%;
 }
 
+/* Plexify .row — exact Bootstrap flex row */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  --bs-gutter-x: 30px;
+  --bs-gutter-y: 0;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+.row > * {
+  max-width: 100%;
+  flex-shrink: 0;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+
+/* Plexify .clipped — exact from layout/index.css.txt */
+.clipped {
+  position: absolute;
+  clip-path: url(#svgTextPath);
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+}
+@media (width < 576px) {
+  .clipped {
+    top: calc(calc(1/5 * 100%) * -1);
+    left: calc(var(--spacing) * -1.5);
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+@media (width >= 576px) {
+  .clipped {
+    top: calc(calc(1/12 * 100%) * -1);
+    left: calc(var(--spacing) * -6.5);
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+@media (width >= 992px) {
+  .clipped {
+    top: 0;
+  }
+}
+@media (width >= 1199px) {
+  .clipped {
+    top: calc(1/5 * 100%);
+  }
+}
+
 @keyframes headerSlideDown {
   0% {
     margin-top: -150px;
