@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export function PrivateEventsTeaser() {
   return (
-    <section className="bg-surface py-24 lg:py-32">
+    <section className="bg-surface py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Image */}
@@ -18,8 +18,7 @@ export function PrivateEventsTeaser() {
 
           {/* Copy */}
           <div>
-            <p className="eyebrow">Private Events</p>
-            <h2 className="text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Planning a Group Event?
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-text-secondary">

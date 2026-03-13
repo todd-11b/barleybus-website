@@ -1,0 +1,11 @@
+:root  {
+    --primary: #C8F31D;
+    --primarydark: #C8F31D;
+    --secondary: #000000;
+    --heading: #072032;
+    --body-bg: #fff;
+    --body-color: #666666;
+    --light: #F2EFEA;
+    --card: #fff;
+    --btn-radius: 50px;
+}

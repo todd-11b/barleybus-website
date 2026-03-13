@@ -42,11 +42,10 @@ const FAQS = [
 
 export function FAQ() {
   return (
-    <section className="bg-surface py-24 lg:py-32">
+    <section className="bg-surface py-20 lg:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 text-center">
-          <p className="eyebrow">Common Questions</p>
-          <h2 className="text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Frequently Asked Questions
           </h2>
         </div>

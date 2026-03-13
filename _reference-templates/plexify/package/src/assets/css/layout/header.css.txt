@@ -1,0 +1,51 @@
+.xmenu-toggler.open~.menu-close.fade-overlay {
+  @apply opacity-50 visible pointer-events-auto;
+}
+
+.xmenu-toggler.open span:nth-child(1) {
+  top: 23px;
+  transform: rotate(135deg);
+}
+
+.xmenu-toggler.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.xmenu-toggler.open span:nth-child(3) {
+  top: 23px;
+  width: 23px;
+  transform: rotate(-135deg);
+}
+
+.nav-wrapper {
+  position: relative;
+}
+
+.nav-indicator {
+  position: absolute;
+  top: 50%;
+  height: 38px;
+  background: white;
+  border-radius: 999px;
+  transition: all 0.35s ease;
+  z-index: 0;
+  width: var(--indicator-width, 0);
+  transform: translateY(-50%) translateX(var(--indicator-x, 0));
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #111;
+}
+
+.sidebar-sticky.sticky-top {
+  top: calc(var(--header-height, 80px) + 10px);
+  position: sticky;
+}
+
+.sidebar-sticky.sticky-default {
+  top: 60%;
+  position: absolute;
+}

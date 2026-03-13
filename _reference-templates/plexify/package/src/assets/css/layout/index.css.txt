@@ -1,0 +1,97 @@
+.clipped {
+  @apply absolute xl:top-1/5 lg:top-0 sm:-top-1/12 -top-1/5 sm:-left-6.5 -left-1.5 bottom-0 right-0 bg-white/25;
+  clip-path: url(#svgTextPath);
+  backdrop-filter: blur(17px);
+}
+
+.dz-hover-item {
+  position: relative;
+}
+
+.dz-hover-img canvas {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.destination-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.12);
+  transition:
+    opacity 0.4s ease,
+    transform 1.2s ease;
+  will-change: transform, opacity;
+}
+
+.destination-bg.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.bg-1 {
+  z-index: 0;
+}
+
+.bg-2 {
+  z-index: 0;
+}
+
+.tour-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.view-detail {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #d9ff00;
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  text-decoration: none;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.view-detail.is-active {
+  opacity: 1;
+}
+
+.alert {
+  @apply py-2.5 px-5;
+}
+
+.alert-danger {
+  @apply bg-red-100 border-red-200 text-red-700;
+}
+
+.alert-sucess {
+  @apply bg-green-100 border-green-200 text-green-700;
+}
+
+.dzSubscribeMsg .alert-success,
+.dzFormMsg .alert-success {
+  @apply text-green-900 bg-green-200 p-5 mb-2.5;
+}
+
+#videoContainer iframe {
+  @apply w-full rounded-xxl xl:h-150 md:h-100 h-70;
+}
