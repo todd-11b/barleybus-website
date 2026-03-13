@@ -9,16 +9,22 @@ import { BOOKING_LINKS } from "@/config/booking";
 export function Hero() {
   const textRef = useRef<SVGTextElement>(null);
 
-  // Reposition SVG clip text y-position based on viewport so "EXPLORE" is fully visible at all sizes
+  // Reposition SVG clip text y based on actual hero height so EXPLORE is
+  // vertically centred in the visible area at every viewport size.
+  // Plexify uses a fixed y=320 which only works at ~1920px.
   useEffect(() => {
     function updateTextPosition() {
       const el = textRef.current;
       if (!el) return;
-      const vw = window.innerWidth;
-      // Scale y proportionally: at 1920px → y=320, at 375px → y=100
-      // Linear interpolation: y = 100 + (vw - 375) * (320 - 100) / (1920 - 375)
-      const y = Math.round(100 + ((vw - 375) * 220) / 1545);
-      el.setAttribute("y", String(Math.max(80, Math.min(360, y))));
+      // Get the hero section height (the parent section element)
+      const hero = el.closest("section") ?? document.querySelector("section");
+      const heroH = hero ? hero.clientHeight : 600;
+      // fontSize is 23vw in SVG user-space pixels
+      const fontSize = window.innerWidth * 0.23;
+      // Place baseline so the text is vertically centred in the hero
+      // baseline ≈ centre + 0.35 * fontSize  (caps sit above baseline)
+      const y = Math.round(heroH * 0.55 + fontSize * 0.35);
+      el.setAttribute("y", String(y));
     }
     updateTextPosition();
     window.addEventListener("resize", updateTextPosition);
