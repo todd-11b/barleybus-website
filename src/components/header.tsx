@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,9 +9,22 @@ import { BOOKING_LINKS } from "@/config/booking";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-[--duration-normal] ${
+        scrolled
+          ? "border-b border-border bg-white/90 shadow-sm backdrop-blur-md"
+          : "border-b border-transparent bg-white/80 backdrop-blur-sm"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo / Wordmark */}
         <Link href="/" className="flex items-center gap-2">
@@ -21,12 +34,12 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-navy transition-colors hover:text-coral"
+              className="relative text-sm font-medium text-navy transition-colors duration-[--duration-fast] hover:text-coral after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-coral after:transition-all after:duration-[--duration-normal] hover:after:w-full"
             >
               {link.label}
             </Link>
@@ -34,10 +47,10 @@ export function Header() {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href={CONTACT.phoneHref}
-            className="flex items-center gap-1.5 text-sm font-medium text-navy hover:text-coral"
+            className="flex items-center gap-1.5 text-sm font-medium text-navy transition-colors duration-[--duration-fast] hover:text-coral"
           >
             <Phone className="h-4 w-4" />
             {CONTACT.phone}
@@ -51,7 +64,7 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden p-2 text-navy"
+          className="lg:hidden p-2 text-navy transition-colors duration-[--duration-fast] hover:text-coral"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
@@ -61,13 +74,13 @@ export function Header() {
 
       {/* Mobile Nav Drawer */}
       {mobileOpen && (
-        <div className="border-t border-border bg-white lg:hidden">
+        <div className="animate-slide-down border-t border-border bg-white lg:hidden">
           <nav className="flex flex-col px-4 py-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="border-b border-border py-3 text-base font-medium text-navy hover:text-coral"
+                className="border-b border-border-light py-3.5 text-base font-medium text-navy transition-colors duration-[--duration-fast] hover:text-coral"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -75,7 +88,7 @@ export function Header() {
             ))}
             <a
               href={CONTACT.phoneHref}
-              className="flex items-center gap-2 py-3 text-base font-medium text-navy"
+              className="flex items-center gap-2 py-3.5 text-base font-medium text-navy"
             >
               <Phone className="h-4 w-4" />
               {CONTACT.phone}
