@@ -1,11 +1,30 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { BOOKING_LINKS } from "@/config/booking";
 
 export function Hero() {
+  const textRef = useRef<SVGTextElement>(null);
+
+  // Reposition SVG clip text y-position based on viewport so "EXPLORE" is fully visible at all sizes
+  useEffect(() => {
+    function updateTextPosition() {
+      const el = textRef.current;
+      if (!el) return;
+      const vw = window.innerWidth;
+      // Scale y proportionally: at 1920px → y=320, at 375px → y=100
+      // Linear interpolation: y = 100 + (vw - 375) * (320 - 100) / (1920 - 375)
+      const y = Math.round(100 + ((vw - 375) * 220) / 1545);
+      el.setAttribute("y", String(Math.max(80, Math.min(360, y))));
+    }
+    updateTextPosition();
+    window.addEventListener("resize", updateTextPosition);
+    return () => window.removeEventListener("resize", updateTextPosition);
+  }, []);
+
   return (
     <section className="relative z-1 overflow-hidden 2xxl:h-250 xl:h-230 lg:h-162.5 sm:h-150 h-130 after:absolute after:inset-0 md:after:bg-gradient-to-b after:bg-gradient-to-t after:from-black/70 after:to-transparent">
       <div className="relative z-1 h-full">
@@ -49,6 +68,7 @@ export function Hero() {
                 <defs>
                   <clipPath id="svgTextPath" clipPathUnits="userSpaceOnUse">
                     <text
+                      ref={textRef}
                       style={{ fontSize: "23vw" }}
                       x="0"
                       y="320"
