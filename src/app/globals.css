@@ -9,6 +9,7 @@
   --color-surface: #F5F5F3;
   --color-border: #EBEBEB;
 
+  --color-primary: #C8F31D;
   --color-coral: #FF6B52;
   --color-coral-hover: #E85A42;
   --color-navy: #1B2A4A;
@@ -66,6 +67,15 @@
 
   /* Animation for header slide down */
   --animate-headerSlideDown: headerSlideDown 0.95s ease forwards;
+}
+
+/* Roboto Condensed Black — needed for SVG clip-path text (font-family="Roboto Condensed") */
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('./fonts/roboto-condensed-black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
