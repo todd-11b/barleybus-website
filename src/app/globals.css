@@ -26,6 +26,17 @@
   --color-footer-muted: #8A9AB8;
 
   --color-star: #FBBF24;
+  --color-gold: #FBBF24;
+
+  /* Bolt color tokens */
+  --color-secondary: #F5F5F3;
+  --color-muted-foreground: #777777;
+  --color-primary-foreground: #FFFFFF;
+  --color-destructive: #EF4444;
+  --color-surface-dark: #1B2A4A;
+  --color-surface-dark-foreground: #FFFFFF;
+  --color-highlight: #FF6B52;
+  --color-highlight-foreground: #FFFFFF;
 
   --font-display: var(--font-oswald), 'Oswald', sans-serif;
   --font-body: var(--font-inter), 'Inter', sans-serif;
@@ -33,6 +44,10 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
   --shadow-1: 0px 5px 40px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 2px 16px rgba(0,0,0,0.06);
+  --shadow-lift: 0 8px 30px rgba(0,0,0,0.12);
+  --shadow-cta: 0 8px 24px rgba(255,107,82,0.35);
+  --shadow-coral: 0 4px 16px rgba(255,107,82,0.3);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -234,6 +249,25 @@
   .clipped {
     top: calc(1/5 * 100%);
   }
+}
+
+/* Bolt .container — centered max-width container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Bolt card hover lift */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
 }
 
 @keyframes headerSlideDown {
