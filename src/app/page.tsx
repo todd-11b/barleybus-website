@@ -1,5 +1,14 @@
 import { Hero } from "@/components/sections/hero";
-import { HeroTest } from "@/components/sections/hero-test";
+import { UpcomingTrips } from "@/components/sections/upcoming-trips";
+import { TourCategories } from "@/components/sections/tour-categories";
+import { HowItWorks } from "@/components/sections/how-it-works";
+import { SocialProof } from "@/components/sections/social-proof";
+import { FeaturedTour } from "@/components/sections/featured-tour";
+import { Reviews } from "@/components/sections/reviews";
+import { PrivateEventsTeaser } from "@/components/sections/private-events-teaser";
+import { Guarantees } from "@/components/sections/guarantees";
+import { FAQ } from "@/components/sections/faq";
+import { FinalCTA } from "@/components/sections/final-cta";
 
 export default function HomePage() {
   return (
@@ -32,11 +41,17 @@ export default function HomePage() {
         }}
       />
 
-      {/* Section 1 — Hero */}
       <Hero />
-
-      {/* Section 2 — Plexify exact copy for testing */}
-      <HeroTest />
+      <UpcomingTrips />
+      <TourCategories />
+      <HowItWorks />
+      <SocialProof />
+      <FeaturedTour />
+      <Reviews />
+      <PrivateEventsTeaser />
+      <Guarantees />
+      <FAQ />
+      <FinalCTA />
     </>
   );
 }
