@@ -16,6 +16,10 @@ const buttonVariants = cva(
         navy: "bg-navy text-white rounded-full hover:bg-navy-light hover:scale-[1.02] active:scale-[0.98]",
         white:
           "bg-white text-navy rounded-full hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98]",
+        hero:
+          "bg-coral text-white rounded-full shadow-cta hover:bg-coral-hover hover:scale-[1.03] active:scale-[0.98]",
+        "hero-ghost":
+          "border border-white/30 text-white rounded-full hover:bg-white/10 backdrop-blur-sm",
         link: "text-coral underline-offset-4 hover:underline",
       },
       size: {
